@@ -11,3 +11,8 @@ export const selectToken = createSelector(
   selector,
   (state: BoardState) => state.board.token
 );
+
+export const selectModalState = createSelector(
+  selector,
+  (state: BoardState) => state.board.isOpenModal
+);

@@ -5,5 +5,6 @@
 4. Start develop column and card components
 5. Added and config [NgRx](https://ngrx.io/)
 6. Developed responsive layout using [mixins and media-queries](https://medium.com/geekculture/sass-media-queries-mixins-1c5e5f605704)
-7. Create header component and modified some styles.
-8. 
+7. Created header component and modified some styles.
+8. Developed [interceptor](https://antonyderham.me/post/angular-ngrx-auth-interceptor/) to handle with auth token using NgRx
+9. Developed [modal component](https://www.w3schools.com/howto/howto_css_modals.asp)

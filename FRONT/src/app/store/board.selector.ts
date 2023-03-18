@@ -7,3 +7,7 @@ export const selectColumns = createSelector(
   selector,
   (state: BoardState) => state.board.columns
 );
+export const selectToken = createSelector(
+  selector,
+  (state: BoardState) => state.board.token
+);

@@ -1,0 +1,16 @@
+@import "abstracts/variables";
+
+.header {
+  width: 100%;
+  background: $primary;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+
+  margin-bottom: 0.5rem;
+
+  &__titlte {
+    font-size: x-large;
+    font-weight: bold;
+    color: white;
+    padding: 1rem;
+  }
+}

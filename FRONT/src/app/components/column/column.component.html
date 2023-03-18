@@ -1,8 +1,8 @@
-<div class="column">
+<section class="column">
   <div class="column__header">
-    <p>{{ title }}</p>
+    <p class="column__header-title">{{ title | uppercase }}</p>
   </div>
-  <div class="column__cards">
+  <div class="column__content">
     <ng-content></ng-content>
   </div>
-</div>
+</section>

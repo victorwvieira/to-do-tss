@@ -10,9 +10,10 @@ import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { boardReducer } from './store/board.reducer';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
-  declarations: [AppComponent, BoardComponent, ColumnComponent, CardComponent],
+  declarations: [AppComponent, BoardComponent, ColumnComponent, CardComponent, HeaderComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

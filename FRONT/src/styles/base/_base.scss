@@ -1,0 +1,5 @@
+@import "abstracts/variables";
+body {
+  background: linear-gradient(0deg, $primary 0%, $secondary 100%);
+  background-attachment: fixed;
+}

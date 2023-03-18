@@ -1,6 +1,21 @@
 <section class="column">
   <div class="column__header">
-    <p class="column__header-title">{{ title | uppercase }}</p>
+    <p class="column__title">{{ title | uppercase }}</p>
+    <fa-icon
+      class="column__icon"
+      *ngIf="title === 'To do'"
+      [icon]="faComment"
+    ></fa-icon>
+    <fa-icon
+      class="column__icon"
+      *ngIf="title === 'Doing'"
+      [icon]="faCommentDots"
+    ></fa-icon>
+    <fa-icon
+      class="column__icon"
+      *ngIf="title === 'Done'"
+      [icon]="faCheck"
+    ></fa-icon>
   </div>
   <div class="column__content">
     <ng-content></ng-content>

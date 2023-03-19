@@ -1,9 +1,6 @@
 <section class="column">
   <div class="column__header">
     <span class="column__title">{{ title | uppercase }}</span>
-    <fa-icon *ngIf="title === 'To do'" [icon]="faFileAlt"></fa-icon>
-    <fa-icon *ngIf="title === 'Doing'" [icon]="faFileCode"></fa-icon>
-    <fa-icon *ngIf="title === 'Done'" [icon]="faFileCircleCheck"></fa-icon>
   </div>
   <div class="column__content">
     <ng-content></ng-content>

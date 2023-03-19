@@ -2,11 +2,12 @@ import { Injectable } from '@angular/core';
 import { Actions, concatLatestFrom, createEffect, ofType } from '@ngrx/effects';
 import { Store } from '@ngrx/store';
 import { EMPTY } from 'rxjs';
-import { map, exhaustMap, catchError } from 'rxjs/operators';
+import { map, exhaustMap, catchError, tap } from 'rxjs/operators';
 import { BoardState } from '../models/board.model';
-import { MoveCard } from '../models/card.model';
+import { Card, MoveCard } from '../models/card.model';
 import { BoardService } from '../services/board.service';
 import {
+  closeModal,
   deleteCard,
   deleteCardSuccess,
   getCards,
@@ -16,6 +17,8 @@ import {
   moveCardSuccess,
   postCard,
   postCardSuccess,
+  updateCard,
+  updateCardSuccess,
   updateToken,
 } from './board.actions';
 import { selectMoveCard } from './board.selector';
@@ -69,7 +72,7 @@ export class BoardEffects {
       ofType(moveCard),
       concatLatestFrom((action) => this.store.select(selectMoveCard)),
       exhaustMap(([action, moveCard]) =>
-        this.boardService.updateCard(moveCard as MoveCard).pipe(
+        this.boardService.updateCard(moveCard?.card as Card).pipe(
           map((card) => moveCardSuccess({ updatedCard: card })),
           catchError(() => EMPTY)
         )
@@ -95,6 +98,18 @@ export class BoardEffects {
       exhaustMap((action) =>
         this.boardService.getCards().pipe(
           map((cards) => getCardsSuccess({ cards })),
+          catchError(() => EMPTY)
+        )
+      )
+    );
+  });
+
+  updateCard$ = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(updateCard),
+      exhaustMap((action) =>
+        this.boardService.updateCard(action.card).pipe(
+          map((card) => updateCardSuccess({ updatedCard: card })),
           catchError(() => EMPTY)
         )
       )

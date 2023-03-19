@@ -10,6 +10,7 @@ import {
   moveCard,
   openModal,
   postCard,
+  updateCard,
 } from 'src/app/store/board.actions';
 import {
   selectCards,
@@ -26,6 +27,7 @@ export class BoardComponent implements OnInit {
   columns$!: Observable<Array<string>>;
   isModalOpen$!: Observable<boolean>;
   cards$!: Observable<Card[]>;
+  editCard: Card | undefined = undefined;
 
   constructor(private store: Store<BoardState>) {}
 
@@ -38,10 +40,19 @@ export class BoardComponent implements OnInit {
 
   onCloseModal(cardContent: CardContent | null): void {
     if (cardContent) {
-      this.store.dispatch(postCard({ cardContent }));
+      if (this.editCard) {
+        const card = {
+          ...this.editCard,
+          ...cardContent,
+        };
+        this.store.dispatch(updateCard({ card }));
+      } else {
+        this.store.dispatch(postCard({ cardContent }));
+      }
     } else {
       this.store.dispatch(closeModal());
     }
+    this.editCard = undefined;
   }
 
   onClickAdd(): void {
@@ -54,5 +65,10 @@ export class BoardComponent implements OnInit {
 
   onDeleteCard(card: Card) {
     this.store.dispatch(deleteCard({ cardId: card.id }));
+  }
+
+  onEditCard(card: Card) {
+    this.editCard = card;
+    this.store.dispatch(openModal());
   }
 }

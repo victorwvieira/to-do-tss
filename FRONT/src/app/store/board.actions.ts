@@ -37,3 +37,11 @@ export const getCardsSuccess = createAction(
   '[Card] Get cards success',
   props<{ cards: Card[] }>()
 );
+export const updateCard = createAction(
+  '[Card] Update card',
+  props<{ card: Card }>()
+);
+export const updateCardSuccess = createAction(
+  '[Card] Update card success',
+  props<{ updatedCard: Card }>()
+);

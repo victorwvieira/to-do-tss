@@ -1,9 +1,4 @@
 import { Component, Input } from '@angular/core';
-import {
-  faFileAlt,
-  faFileCode,
-  faFileCircleCheck,
-} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-column',
@@ -12,7 +7,4 @@ import {
 })
 export class ColumnComponent {
   @Input() title = '';
-  faFileAlt = faFileAlt;
-  faFileCode = faFileCode;
-  faFileCircleCheck = faFileCircleCheck;
 }

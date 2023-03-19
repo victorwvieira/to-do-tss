@@ -2,7 +2,6 @@ import { createReducer, on } from '@ngrx/store';
 import { BoardInitialState } from 'src/app/models/board.model';
 import {
   closeModal,
-  deleteCard,
   deleteCardSuccess,
   getCardsSuccess,
   login,
@@ -11,6 +10,7 @@ import {
   openModal,
   postCard,
   postCardSuccess,
+  updateCardSuccess,
   updateToken,
 } from './board.actions';
 
@@ -39,13 +39,10 @@ export const boardReducer = createReducer(
     (state): BoardInitialState => ({ ...state, isOpenModal: false })
   ),
   on(
-    postCard,
-    (state): BoardInitialState => ({ ...state, isOpenModal: false })
-  ),
-  on(
     postCardSuccess,
     (state, { newCard }): BoardInitialState => ({
       ...state,
+      isOpenModal: false,
       cards: [...state.cards, newCard],
     })
   ),
@@ -120,5 +117,11 @@ export const boardReducer = createReducer(
       ...state,
       cards: cards,
     })
-  )
+  ),
+  on(updateCardSuccess, (state, { updatedCard }): BoardInitialState => {
+    const cards = state.cards.filter((card) => card.id !== updatedCard.id);
+    cards.push(updatedCard);
+
+    return { ...state, cards, isOpenModal: false };
+  })
 );

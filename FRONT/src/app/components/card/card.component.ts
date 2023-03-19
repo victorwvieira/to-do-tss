@@ -4,6 +4,7 @@ import {
   faCircleArrowRight,
   faCircleArrowLeft,
   faTrash,
+  faEdit,
 } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -16,10 +17,12 @@ export class CardComponent {
   @Input() column = '';
   @Output() moveCard = new EventEmitter<MoveCard>();
   @Output() deleteCard = new EventEmitter<Card>();
+  @Output() editCard = new EventEmitter<Card>();
 
   faCircleArrowLeft = faCircleArrowLeft;
   faCircleArrowRight = faCircleArrowRight;
   faTrash = faTrash;
+  faEdit = faEdit;
 
   onMoveCard(direction: string) {
     if (this.card) {
@@ -30,6 +33,12 @@ export class CardComponent {
   onDelete() {
     if (this.card) {
       this.deleteCard.emit(this.card);
+    }
+  }
+
+  onEdit() {
+    if (this.card) {
+      this.editCard.emit(this.card);
     }
   }
 }

@@ -8,7 +8,6 @@ import { Card, CardContent } from 'src/app/models/card.model';
 })
 export class ModalCardComponent {
   @Input() display: boolean | null = false;
-  @Input() isEdit = false;
   @Input() title = '';
   @Input() content = '';
   @Output() closeModal = new EventEmitter<CardContent | null>();

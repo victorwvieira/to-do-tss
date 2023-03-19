@@ -48,11 +48,9 @@ export class BoardService {
       .pipe(catchError(this.handleError));
   }
 
-  updateCard(moveCard: MoveCard) {
-    const url = `${this.baseURL}/cards/${moveCard.card.id}`;
-    return this.http
-      .put<Card>(url, moveCard.card)
-      .pipe(catchError(this.handleError));
+  updateCard(card: Card) {
+    const url = `${this.baseURL}/cards/${card.id}`;
+    return this.http.put<Card>(url, card).pipe(catchError(this.handleError));
   }
 
   deleteCard(cardId: string) {

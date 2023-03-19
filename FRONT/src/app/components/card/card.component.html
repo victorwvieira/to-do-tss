@@ -1,9 +1,14 @@
 <div class="card" *ngIf="card?.lista === column">
   <div class="card__header">
     <span>{{ card?.titulo }}</span>
+    <fa-icon
+      class="card__header-btn"
+      [icon]="faEdit"
+      (click)="onEdit()"
+    ></fa-icon>
   </div>
   <div class="card__content">
-    <p>{{ card?.titulo }}</p>
+    <p>{{ card?.conteudo }}</p>
   </div>
   <div class="card__actions">
     <div>

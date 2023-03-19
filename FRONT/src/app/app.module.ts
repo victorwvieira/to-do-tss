@@ -15,6 +15,7 @@ import { HttpInterceptorService } from './services/http-interceptor.service';
 import { BoardEffects } from './store/board.effects';
 import { ModalCardComponent } from './components/modal-card/modal-card.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
     StoreModule.forRoot({ board: boardReducer }),
     EffectsModule.forRoot([BoardEffects]),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),

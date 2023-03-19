@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { catchError, throwError } from 'rxjs';
-import { Card } from '../models/card.model';
+import { Card, CardContent, MoveCard } from '../models/card.model';
 
 @Injectable({
   providedIn: 'root',
@@ -38,14 +38,20 @@ export class BoardService {
     return this.http.get<Card[]>(url).pipe(catchError(this.handleError));
   }
 
-  postCard() {
+  postCard(cardContent: CardContent) {
     const url = `${this.baseURL}/cards`;
     return this.http
       .post<Card>(url, {
-        titulo: 'string',
-        conteudo: 'string',
+        ...cardContent,
         lista: 'To do',
       })
+      .pipe(catchError(this.handleError));
+  }
+
+  updateCard(moveCard: MoveCard) {
+    const url = `${this.baseURL}/cards/${moveCard.card.id}`;
+    return this.http
+      .put<Card>(url, moveCard.card)
       .pipe(catchError(this.handleError));
   }
 }

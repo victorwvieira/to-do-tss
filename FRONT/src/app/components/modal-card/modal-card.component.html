@@ -1,13 +1,18 @@
 <div class="modal" *ngIf="display">
   <div class="modal__container">
     <div class="modal__header">
-      <span>{{ card ? "EDIT CARD" : "NEW CARD" }}</span>
+      <span>{{ isEdit ? "EDIT CARD" : "NEW CARD" }}</span>
     </div>
     <div class="modal__content">
       <!-- TODO add markdown content-->
+      <!-- TODO refactor to use form -->
       <div class="modal__input-label">
         <label class="modal__label">Title</label>
-        <input class="modal__input" placeholder="Friday dinner" />
+        <input
+          class="modal__input"
+          placeholder="Friday dinner"
+          [(ngModel)]="title"
+        />
       </div>
       <div class="modal__input-label">
         <label class="modal__label">Content</label>
@@ -15,17 +20,24 @@
           class="modal__input"
           rows="8"
           placeholder="Book a table for a dinner at 19h"
+          [(ngModel)]="content"
         ></textarea>
       </div>
     </div>
     <div class="modal__actions">
       <button
-        class="modal__action-btn modal__action-btn--cancel"
+        class="modal__action-btn modal__btn-cancel"
         (click)="onCloseModal()"
       >
         Cancel
       </button>
-      <button class="modal__action-btn modal__action-btn--success">Save</button>
+      <button
+        class="modal__action-btn modal__btn-save"
+        [disabled]="title === '' || content === ''"
+        (click)="onCloseModal(true)"
+      >
+        Save
+      </button>
     </div>
   </div>
 </div>

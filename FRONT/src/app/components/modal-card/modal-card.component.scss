@@ -82,22 +82,24 @@
     font-size: medium;
     font-weight: 500;
 
-    &--cancel {
-      background-color: $btn-cancel-50;
-    }
-    &--success {
-      background-color: $btn-success-50;
-    }
-
     &:hover {
       transition: 0.3s;
       font-weight: bold;
     }
+  }
 
-    &--cancel:hover {
+  &__btn-cancel {
+    background-color: $btn-cancel-50;
+
+    &:hover {
       background-color: $btn-cancel;
     }
-    &--success:hover {
+  }
+
+  &__btn-save {
+    background-color: $btn-success-50;
+
+    &:hover {
       background-color: $btn-success;
     }
   }

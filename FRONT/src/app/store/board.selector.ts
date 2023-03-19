@@ -16,3 +16,13 @@ export const selectModalState = createSelector(
   selector,
   (state: BoardState) => state.board.isOpenModal
 );
+
+export const selectCards = createSelector(
+  selector,
+  (state: BoardState) => state.board.cards
+);
+
+export const selectMoveCard = createSelector(
+  selector,
+  (state: BoardState) => state.board.moveCard
+);

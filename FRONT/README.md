@@ -9,3 +9,4 @@
 8. Developed [interceptor](https://antonyderham.me/post/angular-ngrx-auth-interceptor/) to handle with auth token using NgRx
 9. Developed [modal component](https://www.w3schools.com/howto/howto_css_modals.asp)
 10. Added [Fontawesome](https://github.com/FortAwesome/angular-fontawesome) lib
+11. Developed modal, add new card and move card flow

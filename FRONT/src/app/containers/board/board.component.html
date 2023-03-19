@@ -1,7 +1,12 @@
 <app-header (addNewCard)="onClickAdd()"></app-header>
 <main class="board">
   <app-column [title]="column" *ngFor="let column of columns$ | async">
-    <app-card></app-card>
+    <app-card
+      *ngFor="let card of cards$ | async"
+      [card]="card"
+      [column]="column"
+      (moveCard)="onMoveCard($event)"
+    ></app-card>
   </app-column>
 </main>
 <app-modal-card

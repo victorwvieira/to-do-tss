@@ -1,1 +1,26 @@
-<p>card works!</p>
+<div class="card" *ngIf="card?.lista === column">
+  <div class="card__header">
+    <span>{{ card?.titulo }}</span>
+  </div>
+  <div class="card__content">
+    <p>{{ card?.titulo }}</p>
+  </div>
+  <div class="card__actions">
+    <div>
+      <fa-icon
+        *ngIf="card?.lista !== 'To do'"
+        class="card__actions-btn"
+        [icon]="faCircleArrowLeft"
+        (click)="onMoveCard('left')"
+      ></fa-icon>
+    </div>
+    <div>
+      <fa-icon
+        *ngIf="card?.lista !== 'Done'"
+        class="card__actions-btn"
+        [icon]="faCircleArrowRight"
+        (click)="onMoveCard('right')"
+      ></fa-icon>
+    </div>
+  </div>
+</div>

@@ -2,9 +2,19 @@ import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { BoardState } from 'src/app/models/board.model';
-import { Card } from 'src/app/models/card.model';
-import { closeModal, login, openModal } from 'src/app/store/board.actions';
-import { selectColumns, selectModalState } from 'src/app/store/board.selector';
+import { Card, CardContent, MoveCard } from 'src/app/models/card.model';
+import {
+  closeModal,
+  login,
+  moveCard,
+  openModal,
+  postCard,
+} from 'src/app/store/board.actions';
+import {
+  selectCards,
+  selectColumns,
+  selectModalState,
+} from 'src/app/store/board.selector';
 
 @Component({
   selector: 'app-board',
@@ -14,6 +24,7 @@ import { selectColumns, selectModalState } from 'src/app/store/board.selector';
 export class BoardComponent implements OnInit {
   columns$!: Observable<Array<string>>;
   isModalOpen$!: Observable<boolean>;
+  cards$!: Observable<Card[]>;
 
   constructor(private store: Store<BoardState>) {}
 
@@ -21,13 +32,22 @@ export class BoardComponent implements OnInit {
     this.store.dispatch(login());
     this.columns$ = this.store.select(selectColumns);
     this.isModalOpen$ = this.store.select(selectModalState);
+    this.cards$ = this.store.select(selectCards);
   }
 
-  onCloseModal(card: Card | null): void {
-    this.store.dispatch(closeModal());
+  onCloseModal(cardContent: CardContent | null): void {
+    if (cardContent) {
+      this.store.dispatch(postCard({ cardContent }));
+    } else {
+      this.store.dispatch(closeModal());
+    }
   }
 
   onClickAdd(): void {
     this.store.dispatch(openModal());
+  }
+
+  onMoveCard(card: MoveCard) {
+    this.store.dispatch(moveCard({ moveCard: card }));
   }
 }

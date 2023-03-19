@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { Card } from 'src/app/models/card.model';
+import { Card, CardContent } from 'src/app/models/card.model';
 
 @Component({
   selector: 'app-modal-card',
@@ -8,10 +8,22 @@ import { Card } from 'src/app/models/card.model';
 })
 export class ModalCardComponent {
   @Input() display: boolean | null = false;
-  @Input() card: Card | undefined;
-  @Output() closeModal = new EventEmitter<Card | null>();
+  @Input() isEdit = false;
+  @Input() title = '';
+  @Input() content = '';
+  @Output() closeModal = new EventEmitter<CardContent | null>();
 
-  onCloseModal(card: Card | null = null) {
-    this.closeModal.emit(card);
+  onCloseModal(isSave = false) {
+    if (isSave) {
+      this.closeModal.emit({
+        titulo: this.title,
+        conteudo: this.content,
+      });
+    } else {
+      this.closeModal.emit(null);
+    }
+
+    this.title = '';
+    this.content = '';
   }
 }

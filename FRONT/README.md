@@ -10,3 +10,5 @@
 9. Developed [modal component](https://www.w3schools.com/howto/howto_css_modals.asp)
 10. Added [Fontawesome](https://github.com/FortAwesome/angular-fontawesome) lib
 11. Developed modal, add new card and move card flow
+12. Developed delete and update flow
+13. Added [ngx-markdown](https://www.npmjs.com/package/ngx-markdown) thats also use [DomSanitizer](https://angular.io/api/platform-browser/DomSanitizer#domsanitizer)

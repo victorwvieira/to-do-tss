@@ -1,0 +1,14 @@
+@import "abstracts/variables";
+
+markdown {
+  blockquote {
+    background-color: $primary-30;
+    border: 1px dashed $primary;
+    border-radius: 5px;
+    color: white;
+    font-weight: 700;
+    font-size: medium;
+    margin: 1rem;
+    padding: 0.5rem;
+  }
+}

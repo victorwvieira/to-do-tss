@@ -12,10 +12,13 @@
   flex-direction: row;
   justify-content: space-between;
 
+  position: fixed;
+  height: 64px;
+  z-index: 1000;
+
   &__logo {
     display: flex;
     flex-direction: row;
-    font-size: x-large;
     font-weight: bold;
     color: white;
     padding: 1rem;

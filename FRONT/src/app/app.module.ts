@@ -16,6 +16,7 @@ import { BoardEffects } from './store/board.effects';
 import { ModalCardComponent } from './components/modal-card/modal-card.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FormsModule } from '@angular/forms';
+import { MarkdownModule } from 'ngx-markdown';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { FormsModule } from '@angular/forms';
     EffectsModule.forRoot([BoardEffects]),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
     FontAwesomeModule,
+    MarkdownModule.forRoot(),
   ],
   providers: [
     {

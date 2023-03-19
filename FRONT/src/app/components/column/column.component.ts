@@ -1,8 +1,8 @@
 import { Component, Input } from '@angular/core';
 import {
-  faComment,
-  faCommentDots,
-  faCheck,
+  faFileAlt,
+  faFileCode,
+  faFileCircleCheck,
 } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -12,7 +12,7 @@ import {
 })
 export class ColumnComponent {
   @Input() title = '';
-  faComment = faComment;
-  faCommentDots = faCommentDots;
-  faCheck = faCheck;
+  faFileAlt = faFileAlt;
+  faFileCode = faFileCode;
+  faFileCircleCheck = faFileCircleCheck;
 }

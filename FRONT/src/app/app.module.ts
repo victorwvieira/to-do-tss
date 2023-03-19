@@ -17,6 +17,7 @@ import { ModalCardComponent } from './components/modal-card/modal-card.component
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FormsModule } from '@angular/forms';
 import { MarkdownModule } from 'ngx-markdown';
+import { LMarkdownEditorModule } from 'ngx-markdown-editor';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { MarkdownModule } from 'ngx-markdown';
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
     FontAwesomeModule,
     MarkdownModule.forRoot(),
+    LMarkdownEditorModule,
   ],
   providers: [
     {

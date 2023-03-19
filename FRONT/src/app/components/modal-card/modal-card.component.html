@@ -1,38 +1,38 @@
-<div class="modal" *ngIf="display">
-  <div class="modal__container">
-    <div class="modal__header">
+<div class="modal-container" *ngIf="display">
+  <div class="modal-container__container">
+    <div class="modal-container__header">
       <span>Card details</span>
     </div>
-    <div class="modal__content">
-      <!-- TODO add markdown content-->
+    <div class="modal-container__content">
       <!-- TODO refactor to use form -->
-      <div class="modal__input-label">
-        <label class="modal__label">Title</label>
+      <div class="modal-container__input-label">
+        <label class="modal-container__label">Title</label>
         <input
-          class="modal__input"
+          class="modal-container__input"
           placeholder="Friday dinner"
           [(ngModel)]="title"
         />
       </div>
-      <div class="modal__input-label">
-        <label class="modal__label">Content</label>
-        <textarea
-          class="modal__input"
-          rows="8"
-          placeholder="Book a table for a dinner at 19h"
+      <div class="modal-container__input-label">
+        <label class="modal-container__label">Content</label>
+        <md-editor
+          name="Content"
           [(ngModel)]="content"
-        ></textarea>
+          [height]="'400px'"
+          [options]="options"
+        >
+        </md-editor>
       </div>
     </div>
-    <div class="modal__actions">
+    <div class="modal-container__actions">
       <button
-        class="modal__action-btn modal__btn-cancel"
+        class="modal-container__action-btn modal-container__btn-cancel"
         (click)="onCloseModal()"
       >
         Cancel
       </button>
       <button
-        class="modal__action-btn modal__btn-save"
+        class="modal-container__action-btn modal-container__btn-save"
         [disabled]="title === '' || content === ''"
         (click)="onCloseModal(true)"
       >

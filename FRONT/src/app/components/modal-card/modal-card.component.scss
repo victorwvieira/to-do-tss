@@ -1,7 +1,7 @@
 @import "abstracts/mixins";
 @import "abstracts/variables";
 
-.modal {
+.modal-container {
   position: fixed;
   left: 0;
   top: 0;
@@ -16,7 +16,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 15% auto;
+    margin: 2rem auto;
     width: 90%;
     padding: 0.5rem;
     background: linear-gradient(0deg, $primary 0%, $secondary 100%);

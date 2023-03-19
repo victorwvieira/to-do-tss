@@ -11,6 +11,9 @@ export class ModalCardComponent {
   @Input() title = '';
   @Input() content = '';
   @Output() closeModal = new EventEmitter<CardContent | null>();
+  options = {
+    hideIcons: ['Reference', 'Image'],
+  };
 
   onCloseModal(isSave = false) {
     if (isSave) {

@@ -12,3 +12,6 @@
 11. Developed modal, add new card and move card flow
 12. Developed delete and update flow
 13. Added [ngx-markdown](https://www.npmjs.com/package/ngx-markdown) thats also use [DomSanitizer](https://angular.io/api/platform-browser/DomSanitizer#domsanitizer)
+14. Modified favicon
+15. Added [ngx-markdown-editor](https://github.com/lon-yang/ngx-markdown-editor)
+16. 

@@ -24,3 +24,16 @@ export const moveCardSuccess = createAction(
   '[Card] Move card success',
   props<{ updatedCard: Card }>()
 );
+export const deleteCard = createAction(
+  '[Card] Delete card',
+  props<{ cardId: string }>()
+);
+export const deleteCardSuccess = createAction(
+  '[Card] Delete card success',
+  props<{ cards: Card[] }>()
+);
+export const getCards = createAction('[Card] Get cards');
+export const getCardsSuccess = createAction(
+  '[Card] Get cards success',
+  props<{ cards: Card[] }>()
+);

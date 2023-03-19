@@ -54,4 +54,9 @@ export class BoardService {
       .put<Card>(url, moveCard.card)
       .pipe(catchError(this.handleError));
   }
+
+  deleteCard(cardId: string) {
+    const url = `${this.baseURL}/cards/${cardId}`;
+    return this.http.delete<Card[]>(url).pipe(catchError(this.handleError));
+  }
 }

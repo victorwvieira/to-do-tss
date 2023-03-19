@@ -16,6 +16,13 @@
     </div>
     <div>
       <fa-icon
+        class="card__actions-btn-delete"
+        [icon]="faTrash"
+        (click)="onDelete()"
+      ></fa-icon>
+    </div>
+    <div>
+      <fa-icon
         *ngIf="card?.lista !== 'Done'"
         class="card__actions-btn"
         [icon]="faCircleArrowRight"

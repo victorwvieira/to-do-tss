@@ -5,6 +5,7 @@ import { BoardState } from 'src/app/models/board.model';
 import { Card, CardContent, MoveCard } from 'src/app/models/card.model';
 import {
   closeModal,
+  deleteCard,
   login,
   moveCard,
   openModal,
@@ -49,5 +50,9 @@ export class BoardComponent implements OnInit {
 
   onMoveCard(card: MoveCard) {
     this.store.dispatch(moveCard({ moveCard: card }));
+  }
+
+  onDeleteCard(card: Card) {
+    this.store.dispatch(deleteCard({ cardId: card.id }));
   }
 }

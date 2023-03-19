@@ -23,6 +23,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
   }
 
   &__actions-btn {
@@ -32,6 +33,16 @@
 
     &:hover {
       color: $secondary;
+    }
+  }
+
+  &__actions-btn-delete {
+    font-size: large;
+    color: white;
+    cursor: pointer;
+
+    &:hover {
+      color: $btn-cancel;
     }
   }
 }

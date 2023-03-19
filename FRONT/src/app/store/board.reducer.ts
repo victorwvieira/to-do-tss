@@ -2,6 +2,9 @@ import { createReducer, on } from '@ngrx/store';
 import { BoardInitialState } from 'src/app/models/board.model';
 import {
   closeModal,
+  deleteCard,
+  deleteCardSuccess,
+  getCardsSuccess,
   login,
   moveCard,
   moveCardSuccess,
@@ -103,5 +106,19 @@ export const boardReducer = createReducer(
     cards.push(updatedCard);
 
     return { ...state, cards };
-  })
+  }),
+  on(
+    deleteCardSuccess,
+    (state, { cards }): BoardInitialState => ({
+      ...state,
+      cards: cards,
+    })
+  ),
+  on(
+    getCardsSuccess,
+    (state, { cards }): BoardInitialState => ({
+      ...state,
+      cards: cards,
+    })
+  )
 );

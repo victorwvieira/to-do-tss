@@ -21,19 +21,19 @@
     background: $primary;
     position: sticky;
 
-    color: white;
+    color: $letter-color;
   }
 
   &__title {
     font-size: large;
     font-weight: bold;
+    color: $letter-color;
     padding: 0.25rem;
-
     margin: 0.5rem;
   }
 
   &__content {
-    background: $secondary;
+    background: $secondary-30;
     border-radius: 0 0 10px 10px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     border: 1px solid $primary-30;

@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { Card, CardContent } from 'src/app/models/card.model';
+import { CardContent } from 'src/app/models/card.model';
+import { faSave, faXmark } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-modal-card',
@@ -11,6 +12,8 @@ export class ModalCardComponent {
   @Input() title = '';
   @Input() content = '';
   @Output() closeModal = new EventEmitter<CardContent | null>();
+  faSave = faSave;
+  faXmark = faXmark;
   options = {
     hideIcons: ['Reference', 'Image'],
   };

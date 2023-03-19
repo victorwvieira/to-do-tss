@@ -2,7 +2,7 @@
 
 .card {
   padding: 0.5rem;
-  background: linear-gradient(0deg, $primary-30 0%, $secondary-30 100%);
+  background: linear-gradient(0deg, $primary 0%, $secondary 100%);
   border-radius: 10px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 
@@ -24,11 +24,11 @@
 
   &__header-btn {
     font-size: medium;
-    color: white;
+    color: $letter-color;
     cursor: pointer;
 
     &:hover {
-      color: $secondary;
+      color: $accent;
     }
   }
 
@@ -48,17 +48,17 @@
 
   &__actions-btn {
     font-size: x-large;
-    color: white;
+    color: $letter-color;
     cursor: pointer;
 
     &:hover {
-      color: $secondary;
+      color: $accent;
     }
   }
 
   &__actions-btn-delete {
     font-size: large;
-    color: white;
+    color: $letter-color;
     cursor: pointer;
 
     &:hover {

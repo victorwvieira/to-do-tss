@@ -26,7 +26,6 @@ export class BoardService {
 
   getToken() {
     const url = `${this.baseURL}/login`;
-    //TODO save loginData in other place
     const loginData = { login: 'letscode', senha: 'lets@123' };
     return this.http
       .post<string>(url, loginData)

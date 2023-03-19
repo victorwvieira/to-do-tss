@@ -2,6 +2,11 @@
   <div class="modal-container__container">
     <div class="modal-container__header">
       <span>Card details</span>
+      <fa-icon
+        class="modal-container__header-icon"
+        (click)="onCloseModal()"
+        [icon]="faXmark"
+      ></fa-icon>
     </div>
     <div class="modal-container__content">
       <!-- TODO refactor to use form -->
@@ -29,6 +34,7 @@
         class="modal-container__action-btn modal-container__btn-cancel"
         (click)="onCloseModal()"
       >
+        <fa-icon [icon]="faXmark"></fa-icon>
         Cancel
       </button>
       <button
@@ -36,6 +42,7 @@
         [disabled]="title === '' || content === ''"
         (click)="onCloseModal(true)"
       >
+        <fa-icon [icon]="faSave"></fa-icon>
         Save
       </button>
     </div>

@@ -32,8 +32,21 @@
     padding: 1rem;
     font-size: large;
     font-weight: bold;
-    color: white;
+    color: #0d47a1;
+    border-bottom: 1px solid $primary;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
     width: 100%;
+  }
+
+  &__header-icon {
+    &:hover {
+      color: $btn-cancel;
+    }
   }
 
   &__content {
@@ -51,13 +64,14 @@
     padding: 0.2rem;
     font-size: medium;
     font-weight: bold;
-    color: white;
+    color: $letter-color;
   }
 
   &__input {
-    padding: 0.2rem;
+    padding: 0.5rem;
     font-size: medium;
-    border: none;
+    border: 1px solid $primary;
+    border-radius: 10px;
   }
 
   &__actions {

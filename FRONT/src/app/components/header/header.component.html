@@ -1,3 +1,10 @@
 <header class="header">
-  <h1 class="header__titlte">TO-DO-TSS</h1>
+  <div class="header__logo">
+    <h1>TO-DO-TSS</h1>
+    <fa-icon class="header__icon" [icon]="faDrum"></fa-icon>
+  </div>
+  <button class="header__add-btn" (click)="onClickAddCard()">
+    <fa-icon [icon]="faCirclePlus"></fa-icon>
+    <label class="header__btn-label">New card</label>
+  </button>
 </header>

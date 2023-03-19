@@ -1,4 +1,4 @@
-<app-header></app-header>
+<app-header (addNewCard)="onClickAdd()"></app-header>
 <main class="board">
   <app-column [title]="column" *ngFor="let column of columns$ | async">
     <app-card></app-card>

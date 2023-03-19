@@ -3,7 +3,7 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { BoardState } from 'src/app/models/board.model';
 import { Card } from 'src/app/models/card.model';
-import { closeModal, login } from 'src/app/store/board.actions';
+import { closeModal, login, openModal } from 'src/app/store/board.actions';
 import { selectColumns, selectModalState } from 'src/app/store/board.selector';
 
 @Component({
@@ -25,5 +25,9 @@ export class BoardComponent implements OnInit {
 
   onCloseModal(card: Card | null): void {
     this.store.dispatch(closeModal());
+  }
+
+  onClickAdd(): void {
+    this.store.dispatch(openModal());
   }
 }

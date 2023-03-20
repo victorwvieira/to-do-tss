@@ -4,24 +4,30 @@
 <img width="1792" alt="image" src="https://user-images.githubusercontent.com/8702612/226293231-77786394-8957-4561-a7ee-79f58931f08f.png">
 <img width="1792" alt="image" src="https://user-images.githubusercontent.com/8702612/226293185-18ebe8cd-6b83-44a5-ab73-158cfd7721b1.png">
 
-
-
 ## Instruções para executar a aplicação (local)
 
 ### Servidor
+
 - Para iniciar o servivor acesse o diretório `BACK`
 - Execute o comando `npm i`.
 - Execute o comando `npm run server`.
 
 A URL para acessar o servidor é http://localhost:3000/
+
 - Modifiquei a porta do servidor para 3000 porque no meu computador a 5000 já estava em uso.
 
 ### App Web
+
 - Após iniciar o servidor acesse o diretório `FRONT` para iniciar a aplicação WEB.
 - Execute o comando `npm i`.
 - Execute o comando `ng s`.
 
 A URL de acesso a aplicação é http://localhost:4200/
+
+### App web - LINT
+
+- Acesse o diretório `FRONT`
+- Execute o comando `ng lint`.
 
 ## Sobre o desenvolvimento
 

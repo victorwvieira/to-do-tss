@@ -1,4 +1,4 @@
-# TO-DO-TSS
+# TO-DO-TSS 🥁
 
 ## Instruções para executar a aplicação (local)
 

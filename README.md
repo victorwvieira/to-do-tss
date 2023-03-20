@@ -1,5 +1,11 @@
 # TO-DO-TSS 🥁
 
+<img width="1790" alt="image" src="https://user-images.githubusercontent.com/8702612/226293095-c8e45310-0dda-4507-aeaa-f8709da1bd00.png">
+<img width="1792" alt="image" src="https://user-images.githubusercontent.com/8702612/226293231-77786394-8957-4561-a7ee-79f58931f08f.png">
+<img width="1792" alt="image" src="https://user-images.githubusercontent.com/8702612/226293185-18ebe8cd-6b83-44a5-ab73-158cfd7721b1.png">
+
+
+
 ## Instruções para executar a aplicação (local)
 
 ### Servidor

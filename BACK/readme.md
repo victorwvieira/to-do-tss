@@ -8,4 +8,4 @@ Para executar o backend faça:
 > npm run server
 ```
 
-Ele responderá às requisições em http://localhost:5000.
+Ele responderá às requisições em http://localhost:3000.

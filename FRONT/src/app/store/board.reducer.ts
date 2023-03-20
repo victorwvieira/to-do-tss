@@ -8,7 +8,6 @@ import {
   moveCard,
   moveCardSuccess,
   openModal,
-  postCard,
   postCardSuccess,
   updateCardSuccess,
   updateToken,

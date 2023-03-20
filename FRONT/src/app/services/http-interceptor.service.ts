@@ -1,3 +1,4 @@
+/* eslint-disable @ngrx/no-typed-global-store */
 import {
   HttpEvent,
   HttpHandler,
@@ -16,9 +17,9 @@ import { selectToken } from '../store/board.selector';
 export class HttpInterceptorService implements HttpInterceptor {
   constructor(private store: Store<BoardState>) {}
   intercept(
-    req: HttpRequest<any>,
+    req: HttpRequest<unknown>,
     next: HttpHandler
-  ): Observable<HttpEvent<any>> {
+  ): Observable<HttpEvent<unknown>> {
     if (!req.url.includes('/login')) {
       return this.store.select(selectToken).pipe(
         first(),

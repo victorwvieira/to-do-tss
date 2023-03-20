@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { catchError, throwError } from 'rxjs';
-import { Card, CardContent, MoveCard } from '../models/card.model';
+import { Card, CardContent } from '../models/card.model';
 
 @Injectable({
   providedIn: 'root',

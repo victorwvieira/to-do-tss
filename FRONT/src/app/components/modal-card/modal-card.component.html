@@ -1,0 +1,50 @@
+<div class="modal-container" *ngIf="display">
+  <div class="modal-container__container">
+    <div class="modal-container__header">
+      <span>Card details</span>
+      <fa-icon
+        class="modal-container__header-icon"
+        (click)="onCloseModal()"
+        [icon]="faXmark"
+      ></fa-icon>
+    </div>
+    <div class="modal-container__content">
+      <!-- TODO refactor to use form -->
+      <div class="modal-container__input-label">
+        <label class="modal-container__label">Title</label>
+        <input
+          class="modal-container__input"
+          placeholder="Friday dinner"
+          [(ngModel)]="title"
+        />
+      </div>
+      <div class="modal-container__input-label">
+        <label class="modal-container__label">Content</label>
+        <md-editor
+          name="Content"
+          [(ngModel)]="content"
+          [height]="'400px'"
+          [options]="options"
+        >
+        </md-editor>
+      </div>
+    </div>
+    <div class="modal-container__actions">
+      <button
+        class="modal-container__action-btn modal-container__btn-cancel"
+        (click)="onCloseModal()"
+      >
+        <fa-icon [icon]="faXmark"></fa-icon>
+        Cancel
+      </button>
+      <button
+        class="modal-container__action-btn modal-container__btn-save"
+        [disabled]="title === '' || content === ''"
+        (click)="onCloseModal(true)"
+      >
+        <fa-icon [icon]="faSave"></fa-icon>
+        Save
+      </button>
+    </div>
+  </div>
+</div>

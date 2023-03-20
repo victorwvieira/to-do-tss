@@ -1,0 +1,120 @@
+@import "abstracts/mixins";
+@import "abstracts/variables";
+
+.modal-container {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem auto;
+    width: 90%;
+    padding: 0.5rem;
+    background: linear-gradient(0deg, $primary 0%, $secondary 100%);
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+
+    @include screen("desktop") {
+      width: 50%;
+    }
+  }
+
+  &__header {
+    padding: 1rem;
+    font-size: large;
+    font-weight: bold;
+    color: #0d47a1;
+    border-bottom: 1px solid $primary;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+  }
+
+  &__header-icon {
+    &:hover {
+      color: $btn-cancel;
+    }
+  }
+
+  &__content {
+    padding: 1rem;
+    width: 100%;
+  }
+
+  &__input-label {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+  }
+
+  &__label {
+    padding: 0.2rem;
+    font-size: medium;
+    font-weight: bold;
+    color: $letter-color;
+  }
+
+  &__input {
+    padding: 0.5rem;
+    font-size: medium;
+    border: 1px solid $primary;
+    border-radius: 10px;
+  }
+
+  &__actions {
+    width: 100%;
+    padding: 1rem;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+
+  &__action-btn {
+    padding: 0.5rem;
+    margin: 0.25rem;
+    color: white;
+    border-radius: 10px;
+    border: none;
+
+    transition: 0.3s;
+    cursor: pointer;
+
+    font-size: medium;
+    font-weight: 500;
+
+    &:hover {
+      transition: 0.3s;
+      font-weight: bold;
+    }
+  }
+
+  &__btn-cancel {
+    background-color: $btn-cancel-50;
+
+    &:hover {
+      background-color: $btn-cancel;
+    }
+  }
+
+  &__btn-save {
+    background-color: $btn-success-50;
+
+    &:hover {
+      background-color: $btn-success;
+    }
+  }
+}

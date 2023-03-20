@@ -1,0 +1,19 @@
+<app-header (addNewCard)="onClickAdd()"></app-header>
+<main class="board">
+  <app-column [title]="column" *ngFor="let column of columns$ | async">
+    <app-card
+      *ngFor="let card of cards$ | async"
+      [card]="card"
+      [column]="column"
+      (moveCard)="onMoveCard($event)"
+      (deleteCard)="onDeleteCard($event)"
+      (editCard)="onEditCard($event)"
+    ></app-card>
+  </app-column>
+</main>
+<app-modal-card
+  [display]="isModalOpen$ | async"
+  [title]="editCard?.titulo ?? ''"
+  [content]="editCard?.conteudo ?? ''"
+  (closeModal)="onCloseModal($event)"
+></app-modal-card>

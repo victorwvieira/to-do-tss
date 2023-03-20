@@ -1,0 +1,58 @@
+@import "abstracts/variables";
+@import "abstracts/mixins";
+
+.header {
+  width: 100%;
+  background: $primary;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+
+  margin-bottom: 0.5rem;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  position: fixed;
+  height: 64px;
+  z-index: 1000;
+
+  &__logo {
+    display: flex;
+    flex-direction: row;
+    font-weight: bold;
+    color: $letter-color;
+    padding: 1rem;
+    align-items: center;
+  }
+
+  &__icon {
+    margin: 0 0.5rem;
+  }
+
+  &__add-btn {
+    margin-right: 1rem;
+    padding: 1rem;
+    border: none;
+    background-color: transparent;
+    font-size: large;
+    color: $letter-color;
+
+    cursor: pointer;
+
+    &:hover {
+      font-weight: bold;
+    }
+  }
+
+  &__btn-label {
+    margin-left: 0.25rem;
+    cursor: pointer;
+
+    @include screen("mobile") {
+      display: none;
+    }
+    @include screen("desktop") {
+      display: inline;
+    }
+  }
+}

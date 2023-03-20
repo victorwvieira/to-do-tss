@@ -2,13 +2,15 @@
 
 ## Instruções para executar a aplicação (local)
 
+### Servidor
 - Para iniciar o servivor acesse o diretório `BACK`
 - Execute o comando `npm i`.
 - Execute o comando `npm run server`.
 
 A URL para acessar o servidor é http://localhost:3000/
-Modifiquei a porta do servidor para 3000 porque no meu computador a 5000 já estava em uso.
+- Modifiquei a porta do servidor para 3000 porque no meu computador a 5000 já estava em uso.
 
+### App Web
 - Após iniciar o servidor acesse o diretório `FRONT` para iniciar a aplicação WEB.
 - Execute o comando `npm i`.
 - Execute o comando `ng s`.
